@@ -1,23 +1,21 @@
-# Neovim from scratch
+# Logan's Neovim Config
+
+A personalized variant of [Neovim from Scratch](https://github.com/LunarVim/Neovim-from-scratch)
 
 ## Try out this config
 
-Make sure to remove or move your current `nvim` directory
-
+Clone this repo, change the name to `nvim`, and move it to your ~/.config folder with the following command:
 ```
-git clone git@github.com:ChristianChiarulli/Neovim-from-scratch.git ~/.config/nvim
+git clone https://github.com/lognorman20/nvimconfig.git ~/.config/nvim
 ```
 
 Run `nvim` and wait for the plugins to be installed 
 
 **NOTE** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim) 
 
-
-each video will be associated with a branch so checkout the one you are interested in
-
 ## Get healthy
 
-Open `nvim` and enter the following:
+Open `nvim` from the terminal and enter the following:
 
 ```
 :checkhealth
