@@ -4,12 +4,18 @@ A personalized variant of [Neovim from Scratch](https://github.com/LunarVim/Neov
 
 ## Try out this config
 
+First, make sure that you have Neovim installed:
+
+```
+brew install neovim
+```
+
 Clone this repo, change the name to `nvim`, and move it to your ~/.config folder with the following command:
 ```
 git clone https://github.com/lognorman20/nvimconfig.git ~/.config/nvim
 ```
 
-Run `nvim` and wait for the plugins to be installed 
+Run `nvim` in the terminal and wait for the plugins to be installed 
 
 **NOTE** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim) 
 
