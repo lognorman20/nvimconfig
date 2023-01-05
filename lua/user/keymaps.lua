@@ -18,15 +18,36 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Normal --
+-- NORMAL --
+
+-- Better file navigation
+keymap("n", "<leader>e", ":Ex<cr>", opts)
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- Keep the current line in the center of the screen when ctrl-d/ctrl-u-ing
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
+
+-- delete highlighted word and keep old clipboard's content
+keymap("x", "<leader>p", [["_dP]], opts)
+
+-- copy to system clipboard fr
+keymap("n", "<leader>y", [["+y]], opts)
+keymap("v", "<leader>y", [["+y]], opts)
+keymap("n", "<leader>Y", [["+Y]], opts)
+keymap("n", "<leader>d", [["_d]], opts)
+keymap("v", "<leader>d", [["_d]], opts)
+
+-- Keep search terms in the middle
+keymap("n", "n", "nzzzv", opts)
+keymap("n", "N", "Nzzzv", opts)
+
 -- Close current buffer window
-keymap("n", "<leader>w", ":bd<CR>", opts)
+keymap("n", "<leader>w", ":bd!<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -74,5 +95,4 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope
-keymap("n", "<leader>e", ":Telescope find_files<cr>", opts)
 keymap("n", "<leader>f", ":Telescope grep_string<cr>", opts)
