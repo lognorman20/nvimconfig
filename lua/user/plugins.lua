@@ -82,6 +82,8 @@ return packer.startup(function(use)
   -- Telescope
   use "nvim-telescope/telescope.nvim"
 
+  use "windwp/nvim-ts-autotag"
+
   -- Harpoon
   use "ThePrimeagen/harpoon"
 

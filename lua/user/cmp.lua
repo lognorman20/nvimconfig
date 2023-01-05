@@ -112,6 +112,7 @@ cmp.setup {
   sources = {
     { name = "luasnip" },
     { name = "nvim_lsp" },
+    { name = "autotag" },
     { name = "buffer" },
     { name = "path" },
   },
