@@ -5,6 +5,49 @@ local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
+-- [FUNCTIONS]
+function vim.find_from_git_root()
+  local function is_git_repo()
+    vim.fn.system("git rev-parse --is-inside-work-tree")
+    return vim.v.shell_error == 0
+  end
+  local function get_git_root()
+    local dot_git_path = vim.fn.finddir(".git", ".;")
+    return vim.fn.fnamemodify(dot_git_path, ":h")
+  end
+  local opts = {}
+  if is_git_repo() then
+    opts = {
+      cwd = get_git_root(),
+    }
+  end
+  require("telescope.builtin").find_files(opts)
+end
+
+function git_grep()
+	local function is_git_repo()
+		vim.fn.system("git rev-parse --is-inside-work-tree")
+
+		return vim.v.shell_error == 0
+	end
+
+	local function get_git_root()
+		local dot_git_path = vim.fn.finddir(".git", ".;")
+		return vim.fn.fnamemodify(dot_git_path, ":h")
+	end
+
+	local opts = {}
+
+	if is_git_repo() then
+		opts = {
+			cwd = get_git_root(),
+		}
+	end
+
+	require("telescope.builtin").live_grep(opts)
+end
+-- [END FUNCTIONS]
+
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -95,4 +138,5 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope
-keymap("n", "<leader>f", ":Telescope grep_string<cr>", opts)
+keymap("n", "<leader>ff", ":lua vim.find_from_git_root()<cr>", opts)
+keymap("n", "<leader>fg", ":lua git_grep()<cr>", opts)

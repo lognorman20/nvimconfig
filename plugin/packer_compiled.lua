@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "/Users/logno/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/Users/logno/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/Users/logno/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -238,11 +243,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/logno/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
-  },
-  ["vim-be-good"] = {
-    loaded = true,
-    path = "/Users/logno/.local/share/nvim/site/pack/packer/start/vim-be-good",
-    url = "https://github.com/ThePrimeagen/vim-be-good"
   }
 }
 

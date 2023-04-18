@@ -52,11 +52,9 @@ return packer.startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use "akinsho/toggleterm.nvim"
 
-  -- ThePrimagen nvim game
-  use 'ThePrimeagen/vim-be-good'
-
   -- Colorschemes
   use 'overcache/NeoSolarized'
+  use 'ellisonleao/gruvbox.nvim'
   use 'aktersnurra/no-clown-fiesta.nvim'
   use 'marko-cerovac/material.nvim'
   use 'rebelot/kanagawa.nvim'
@@ -93,7 +91,10 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
-  use 'iamcco/markdown-preview.nvim'
+  use {
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    }
 
   -- Git
   use "lewis6991/gitsigns.nvim"
