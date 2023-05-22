@@ -91,10 +91,8 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
-  use {
-        "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end,
-    }
+
+  use 'iamcco/markdown-preview.nvim'
 
   -- Git
   use "lewis6991/gitsigns.nvim"
