@@ -9,6 +9,10 @@ First, make sure that you have Neovim installed:
 ```
 brew install neovim
 ```
+(Optional) Clean up any existing nvim plugins
+```
+rm -rf ~/.local/share/nvim
+```
 
 Clone this repo, change the name to `nvim`, and move it to your ~/.config folder with the following command:
 ```
