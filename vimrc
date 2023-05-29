@@ -99,11 +99,14 @@ let g:netrw_keepdir=0
 
 " status line basics
 set laststatus=2
-set statusline=%<%f%m\ cwd:\%{getcwd()}\ \ \ %=\ [%{strftime('%Y/%b/%d\ %a\ %I:%M\ %p')}\]\ \ %P
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
 
 """" PLUGINS """"
 call plug#begin()
 	
+ Plug 'itchyny/lightline.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'sheerun/vim-polyglot'
 Plug 'ap/vim-buftabline'
@@ -114,9 +117,6 @@ call plug#end()
 """" KEY MAPPINGS """"
   " general
   let mapleader = " "
-
-  " personal preferences
-  nnoremap <C-A> ggVG
 
   " window navigation
   nnoremap <silent> <leader>w :bd!<CR>
