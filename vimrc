@@ -106,11 +106,12 @@ let g:lightline = {
 """" PLUGINS """"
 call plug#begin()
 	
- Plug 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'sheerun/vim-polyglot'
 Plug 'ap/vim-buftabline'
 Plug 'xuhdev/vim-latex-live-preview'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -119,7 +120,7 @@ call plug#end()
   let mapleader = " "
 
   " window navigation
-  nnoremap <silent> <leader>w :bd!<CR>
+  nnoremap <leader>w :bd!<CR>
 
   " netrw navingation
   nnoremap <silent> <leader>e  :call ToggleNetrw()<CR>
