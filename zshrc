@@ -26,7 +26,8 @@ export NVM_DIR="$HOME/.nvm"
     alias rm='rm -i -r' # prevents rm from being bad
 
 	# ls when changing directories
-	chpwd() gls --color
+	chpwd() ls
+
 
     # To folders
     alias ggithub="cd ~/Documents/work/github"
@@ -49,3 +50,6 @@ export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
 # vim mode in terminal
 bindkey -v
+autoload edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
